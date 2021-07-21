@@ -11,6 +11,7 @@ function CreateTodo(props) {
         {
         console.log('newToDoCreated lifting state up with handler')
         props.onCreate(newTodo)
+        setNewTodo("")
         }
         else{
             alert('enter valid input')

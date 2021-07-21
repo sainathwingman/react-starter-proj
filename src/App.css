@@ -43,6 +43,10 @@
   padding: 30px;
 }
 .todo-item{
+  margin-top: 10px;
+}
+.todo-text{
+  margin-left: 5px;
   padding: 5px;  
   font-size: 16px;
 }
