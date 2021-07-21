@@ -26,10 +26,20 @@ function TodoApp(props){
         setTodoList(todoListClone)
     }
 
+    const handleTodoDelete=(index)=>//set state must always replace the whole array ?
+    {
+        console.log('handleTodoDelete called with')
+        //clone list, replace mutated todo , setState to new list
+        let todoListClone=[...todoList]
+        todoListClone.splice(index,1)
+        setTodoList(todoListClone)
+    }
+
+
     return (
         <div className="todo-app">
             <CreateToDo onCreate={handleNewToDo}></CreateToDo>         
-            <TodoList todoList={todoList} onTodoUpdate={handleTodoUpdate}></TodoList>
+            <TodoList todoList={todoList} onTodoUpdate={handleTodoUpdate} onTodoDelete={handleTodoDelete}></TodoList>
         </div>
     )
 

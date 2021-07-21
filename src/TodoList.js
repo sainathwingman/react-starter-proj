@@ -15,6 +15,21 @@ function TodoList(props) {
   console.log('sorted list is')
   console.log(JSON.parse(JSON.stringify(sortedList)))
 
+
+
+  const handleTodoDelete = (todo) => {
+    console.log('todo being deleted',todo)
+  //clone todo item, mutate checkedState in cloned item and pass new itemState and index to parent
+  
+  
+
+  //find the index of the item in the original todolist NOT SORTER copy
+  let index=todoList.findIndex(e=>todo.id==e.id)
+
+  props.onTodoDelete(index)
+};
+  
+
   const handleCheckBoxChange = (todo,newIsCheckedState) => {
       console.log('handlecheckbox change args',todo,newIsCheckedState)
     //clone todo item, mutate checkedState in cloned item and pass new itemState and index to parent
@@ -35,6 +50,7 @@ function TodoList(props) {
           <TodoItem key={index}
             todo={todo}
             onCheckboxChange={handleCheckBoxChange.bind(null, todo)}
+            onDelete={handleTodoDelete.bind(null,todo)}
           ></TodoItem>
         );
       })}

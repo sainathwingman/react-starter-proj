@@ -20,8 +20,11 @@ function TodoItem(props) {
         onChange={handleCheckBoxChange}
         name="checked"
       ></input>
-      <label htmlFor="checked" className="todo-text">{todoText}</label>
-      
+      <label htmlFor="checked" className="todo-text]">{todoText}</label>
+        <div className="deleteSection">
+       <button className="deleteBtn" onClick={props.onDelete}>X</button>
+        </div>
+
     </div>
   );
 }
